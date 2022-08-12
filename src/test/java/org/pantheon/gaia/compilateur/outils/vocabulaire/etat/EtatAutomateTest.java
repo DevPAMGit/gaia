@@ -1,9 +1,8 @@
-package org.pantheon.gaia.compilateur.symbole.v1;
+package org.pantheon.gaia.compilateur.outils.vocabulaire.etat;
 
 import junit.framework.TestCase;
 import org.junit.Test;
 import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.EtatAutomate;
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.IEtatAutomate;
 import org.pantheon.gaia.compileur.outils.vocabulaire.source.transition.TransitionAutomate;
 
 /**
@@ -32,11 +31,12 @@ public class EtatAutomateTest extends TestCase {
     }
 
     @Test
-    public void testInitialisation() {
+    public void testSatisfaction() {
         assertTrue(this.etatSatisfaisant.estSatisfaisant());
         assertFalse(this.etatNonSatisfaisant.estSatisfaisant());
     }
 
+    @Test
     public void testTransition() {
         assertNull(this.etatSatisfaisant.transiter("10"));
         assertNotNull(this.etatSatisfaisant.transiter("c"));

@@ -1,4 +1,4 @@
-package org.pantheon.gaia.compilateur.symbole.v1;
+package org.pantheon.gaia.compilateur.outils.vocabulaire.transition;
 
 import org.junit.Test;
 import junit.framework.TestCase;
