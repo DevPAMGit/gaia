@@ -1,4 +1,4 @@
-package org.pantheon.gaia.compileur.outils.vocabulaire.source.etat;
+package org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat;
 
 /**
  * Interface contractualisant les opérations nécessaires pour un etat d'automate.

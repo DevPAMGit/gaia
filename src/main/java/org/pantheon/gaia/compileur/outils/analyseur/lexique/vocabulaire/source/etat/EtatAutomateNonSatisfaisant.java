@@ -1,6 +1,4 @@
-package org.pantheon.gaia.compileur.outils.vocabulaire.source.etat;
-
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.transition.TransitionAutomate;
+package org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat;
 
 /**
  * Classe définissant un automate non satisfaisant.

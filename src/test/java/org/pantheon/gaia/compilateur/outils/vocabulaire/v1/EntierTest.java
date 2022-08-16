@@ -2,7 +2,7 @@ package org.pantheon.gaia.compilateur.outils.vocabulaire.v1;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.pantheon.gaia.compileur.outils.vocabulaire.v1.Entier;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.v1.Entier;
 
 public class EntierTest {
     /**

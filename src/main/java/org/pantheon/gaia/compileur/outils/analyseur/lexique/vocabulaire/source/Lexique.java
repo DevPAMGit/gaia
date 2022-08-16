@@ -1,12 +1,12 @@
-package org.pantheon.gaia.compileur.outils.vocabulaire.source;
+package org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source;
 
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.EtatAutomateNonSatisfaisant;
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.IEtatAutomate;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.IEtatAutomate;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomateNonSatisfaisant;
 
 /**
  * Classe pour un automate.
  */
-public abstract class Automate {
+public abstract class Lexique {
 
     /**
      * Etat source de l'automate.
@@ -14,9 +14,9 @@ public abstract class Automate {
     protected EtatAutomateNonSatisfaisant source;
 
     /**
-     * Initialise une nouvelle instance de la classe {@link Automate}.
+     * Initialise une nouvelle instance de la classe {@link Lexique}.
      */
-    public Automate() {
+    public Lexique() {
         this.source = null;
         this.initialiser();
     }

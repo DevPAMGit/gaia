@@ -1,6 +1,6 @@
-package org.pantheon.gaia.compileur.outils.vocabulaire.source.etat;
+package org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat;
 
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.transition.TransitionAutomate;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.transition.TransitionAutomate;
 
 import java.util.ArrayList;
 

@@ -1,14 +1,14 @@
-package org.pantheon.gaia.compileur.outils.vocabulaire.v1;
+package org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.v1;
 
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.Automate;
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.EtatAutomateNonSatisfaisant;
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.EtatAutomateSatisfaisant;
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.transition.TransitionAutomate;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.Lexique;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomateSatisfaisant;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.transition.TransitionAutomate;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomateNonSatisfaisant;
 
 /**
  * Automate pour le vocabulaire de type booléen.
  */
-public class Booleen extends Automate {
+public class Booleen extends Lexique {
     @Override
     protected void initialiser() {
         EtatAutomateNonSatisfaisant etat1 = new EtatAutomateNonSatisfaisant();

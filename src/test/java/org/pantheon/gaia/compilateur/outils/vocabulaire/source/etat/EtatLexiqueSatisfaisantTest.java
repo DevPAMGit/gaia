@@ -2,14 +2,14 @@ package org.pantheon.gaia.compilateur.outils.vocabulaire.source.etat;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.EtatAutomate;
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.EtatAutomateSatisfaisant;
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.transition.TransitionAutomate;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomate;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomateSatisfaisant;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.transition.TransitionAutomate;
 
 /**
  * Classe de test pour la classe EtatAutomateSatisfaisant.
  */
-public class EtatAutomateSatisfaisantTest {
+public class EtatLexiqueSatisfaisantTest {
 
     /**
      * Etat de satisfaction à tester.
@@ -22,9 +22,9 @@ public class EtatAutomateSatisfaisantTest {
     private final EtatAutomate etatNonSatisfaisant = new EtatAutomate(false);
 
     /**
-     * Initialise une nouvelle instance de la classe {@link EtatAutomateSatisfaisantTest}.
+     * Initialise une nouvelle instance de la classe {@link EtatLexiqueSatisfaisantTest}.
      */
-    public EtatAutomateSatisfaisantTest() {
+    public EtatLexiqueSatisfaisantTest() {
         this.etatSatisfaisant = new EtatAutomateSatisfaisant();
     }
 

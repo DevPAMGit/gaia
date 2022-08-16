@@ -1,14 +1,14 @@
-package org.pantheon.gaia.compileur.outils.vocabulaire.v1;
+package org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.v1;
 
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.Automate;
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.EtatAutomateNonSatisfaisant;
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.EtatAutomateSatisfaisant;
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.transition.TransitionAutomate;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomateSatisfaisant;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.Lexique;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomateNonSatisfaisant;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.transition.TransitionAutomate;
 
 /**
  * Classe personnalisée pour l'extraction de chaînes de caractères.
  */
-public class Chaine  extends Automate {
+public class Chaine  extends Lexique {
 
     /**
      * Initialise une nouvelle instance de la classe {@link Chaine}.

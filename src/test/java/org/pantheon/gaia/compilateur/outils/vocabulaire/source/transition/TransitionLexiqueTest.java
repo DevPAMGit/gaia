@@ -2,23 +2,23 @@ package org.pantheon.gaia.compilateur.outils.vocabulaire.source.transition;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.EtatAutomate;
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.IEtatAutomate;
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.transition.TransitionAutomate;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomate;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.IEtatAutomate;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.transition.TransitionAutomate;
 
 /**
  * Classe de test pour la classe TransitionAutomate.
  */
-public class TransitionAutomateTest {
+public class TransitionLexiqueTest {
     /**
      * L'instance à tester dans cette classe.
      */
     private final TransitionAutomate transition;
 
     /**
-     * Initialise une nouvelle instance de la classe {@link TransitionAutomateTest}.s
+     * Initialise une nouvelle instance de la classe {@link TransitionLexiqueTest}.s
      */
-    public TransitionAutomateTest() {
+    public TransitionLexiqueTest() {
         EtatAutomate etat = new EtatAutomate(true);
         this.transition = new TransitionAutomate(etat, "[a-zA-Z]");
 

@@ -1,6 +1,6 @@
-package org.pantheon.gaia.compileur.outils.vocabulaire.source.transition;
+package org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.transition;
 
-import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.IEtatAutomate;
+import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.IEtatAutomate;
 
 /** Transition entre deux nœuds. */
 public class TransitionAutomate {
@@ -31,9 +31,6 @@ public class TransitionAutomate {
      * @return L'état suivant si la condition est rempli sinon null.
      */
     public IEtatAutomate transiter(String caractere) {
-        /*System.out.println(this.valeur +  " == " + caractere);
-        System.out.println(caractere.matches(this.valeur));*/
-
         if(caractere == null) return null;
         if( caractere.matches(this.valeur) ) return this.destination;
         return null;
