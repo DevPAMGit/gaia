@@ -7,7 +7,7 @@ import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.v1.Boole
 /**
  * Classe de test pour la classe {@link BooleenLexique}.
  */
-public class BooleenLexicalTest {
+public class BooleenLexiqueTest {
 
     /**
      * Vocabulaire du test.
@@ -15,9 +15,9 @@ public class BooleenLexicalTest {
     private final BooleenLexique vocabulaire;
 
     /**
-     * Initialise une nouvelle instance de la classe {@link BooleenLexicalTest}.
+     * Initialise une nouvelle instance de la classe {@link BooleenLexiqueTest}.
      */
-    public BooleenLexicalTest() {
+    public BooleenLexiqueTest() {
         this.vocabulaire = new BooleenLexique();
     }
 
@@ -28,8 +28,8 @@ public class BooleenLexicalTest {
     public void extraireSymboleVideTest() {
         String chaine1 = "\"\"";
         String chaine2 = "\" \"";
-        Assert.assertNull(this.vocabulaire.extraireSymbole(chaine1, 0).obtJeton());
-        Assert.assertNull(this.vocabulaire.extraireSymbole(chaine2, 0).obtJeton());
+        Assert.assertNull(this.vocabulaire.extraireSymbole(chaine1, 0));
+        Assert.assertNull(this.vocabulaire.extraireSymbole(chaine2, 0));
     }
 
     /**

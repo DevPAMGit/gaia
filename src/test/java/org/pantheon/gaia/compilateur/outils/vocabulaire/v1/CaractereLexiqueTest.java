@@ -4,16 +4,16 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.v1.CaractereLexique;
 
-public class CaractereLexicaleTest {
+public class CaractereLexiqueTest {
     /**
      * Le vocabulaire à tester.
      */
     private final CaractereLexique vocabulaire;
 
     /**
-     * Initialise une nouvelle instance de la classe {@link CaractereLexicaleTest}.
+     * Initialise une nouvelle instance de la classe {@link CaractereLexiqueTest}.
      */
-    public CaractereLexicaleTest(){
+    public CaractereLexiqueTest(){
         this.vocabulaire = new CaractereLexique();
     }
 

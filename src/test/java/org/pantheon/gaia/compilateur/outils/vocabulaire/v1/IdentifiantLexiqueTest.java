@@ -28,8 +28,8 @@ public class IdentifiantLexiqueTest {
     public void extraireSymboleVideTest() {
         String chaineVide1 = "";
         String chaineVide2 = " ";
-        Assert.assertNull(this.vocabulaire.extraireSymbole(chaineVide1, 0).obtJeton());
-        Assert.assertNull(this.vocabulaire.extraireSymbole(chaineVide2, 0).obtJeton());
+        Assert.assertNull(this.vocabulaire.extraireSymbole(chaineVide1, 0));
+        Assert.assertNull(this.vocabulaire.extraireSymbole(chaineVide2, 0));
     }
 
     /**

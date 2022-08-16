@@ -5,9 +5,9 @@ import org.junit.Test;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.v1.ChaineLexique;
 
 /**
- * Classe de test pour les classes de type {@link ChaineLexicaleTest}.
+ * Classe de test pour les classes de type {@link ChaineLexiqueTest}.
  */
-public class ChaineLexicaleTest {
+public class ChaineLexiqueTest {
 
     /**
      * Vocabulaire de test.
@@ -15,9 +15,9 @@ public class ChaineLexicaleTest {
     private final ChaineLexique vocabulaire;
 
     /**
-     * Initialise une nouvelle instance de la classe {@link ChaineLexicaleTest}.
+     * Initialise une nouvelle instance de la classe {@link ChaineLexiqueTest}.
      */
-    public ChaineLexicaleTest() {
+    public ChaineLexiqueTest() {
         this.vocabulaire = new ChaineLexique();
     }
 
