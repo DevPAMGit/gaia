@@ -38,15 +38,19 @@ public class ReelLexique extends EntierLexique {
     protected String extraireUniteLexicale(String instruction, int curseur) {
         String unite = super.extraireUniteLexicale(instruction, curseur);
 
-        curseur = (unite == null) ? 0 : unite.length();
-        if (unite == null) unite = this.extraireSousUniteLexicale(instruction, curseur);
-        else unite += this.extraireSousUniteLexicale(instruction, curseur);
+        curseur = (unite == null) ? 0 : curseur + unite.length();
+        String buffer = this.extraireSousUniteLexicale(instruction, curseur);
+
+        if(buffer == null) return null;
+
+        if (unite != null) unite += buffer;
+        else unite = buffer;
 
         if(unite == null) return null;
 
-        curseur = unite.length();
+        curseur += 1;
 
-        String buffer = super.extraireUniteLexicale(instruction, curseur);
+        buffer = super.extraireUniteLexicale(instruction, curseur);
         if(buffer == null) return null;
         unite += buffer;
 
