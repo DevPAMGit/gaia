@@ -4,18 +4,20 @@ import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.e
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.IEtatAutomate;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomateNonSatisfaisant;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.transition.TransitionAutomate;
+import org.pantheon.gaia.compileur.outils.symbole.source.Symbole;
+import org.pantheon.gaia.compileur.outils.symbole.v1.ReelSymbole;
 
 /**
- * Classe de vocabulaire pour un Réel.
+ * Champ lexical pour les types réels.
  */
-public class Reel extends Entier {
+public class ReelLexique extends EntierLexique {
 
     private EtatAutomateNonSatisfaisant source2;
 
     /**
-     * Initialise une nouvelle instance de la classe {@link Reel} class.
+     * Initialise une nouvelle instance de la classe {@link ReelLexique} class.
      */
-    public Reel(){
+    public ReelLexique(){
         super();
     }
 
@@ -33,18 +35,18 @@ public class Reel extends Entier {
     }
 
     @Override
-    public String extraireUniteLexicale(String commande, int curseur) {
-        String unite = super.extraireUniteLexicale(commande, curseur);
+    protected String extraireUniteLexicale(String instruction, int curseur) {
+        String unite = super.extraireUniteLexicale(instruction, curseur);
 
         curseur = (unite == null) ? 0 : unite.length();
-        if (unite == null) unite = this.extraireSousUniteLexicale(commande, curseur);
-        else unite += this.extraireSousUniteLexicale(commande, curseur);
+        if (unite == null) unite = this.extraireSousUniteLexicale(instruction, curseur);
+        else unite += this.extraireSousUniteLexicale(instruction, curseur);
 
         if(unite == null) return null;
 
         curseur = unite.length();
 
-        String buffer = super.extraireUniteLexicale(commande, curseur);
+        String buffer = super.extraireUniteLexicale(instruction, curseur);
         if(buffer == null) return null;
         unite += buffer;
 
@@ -57,7 +59,7 @@ public class Reel extends Entier {
      * @param curseur La position de départ pour du parseur.
      * @return  La sous-unité lexicale extraite ou null.
      */
-    public String extraireSousUniteLexicale(String commande, int curseur) {
+    protected String extraireSousUniteLexicale(String commande, int curseur) {
         String unite = "";
         int max = commande.length();
         IEtatAutomate etat = this.source2;
@@ -71,5 +73,12 @@ public class Reel extends Entier {
 
         if(etat == null || !etat.estSatisfaisant()) return null;
         return unite;
+    }
+
+    @Override
+    public Symbole extraireSymbole(String instruction, int curseur) {
+        String unite = this.extraireUniteLexicale(instruction, curseur);
+        if(unite == null) return null;
+        return new ReelSymbole(unite);
     }
 }

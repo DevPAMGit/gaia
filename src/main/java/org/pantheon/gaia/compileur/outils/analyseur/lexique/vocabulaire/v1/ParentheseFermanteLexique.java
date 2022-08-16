@@ -4,16 +4,18 @@ import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.e
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.Lexique;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomateNonSatisfaisant;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.transition.TransitionAutomate;
+import org.pantheon.gaia.compileur.outils.symbole.source.Symbole;
+import org.pantheon.gaia.compileur.outils.symbole.v1.ParentheseFermanteSymbole;
 
 /**
- * Classe personnalisée pour l'extraction du caractère de parenthèse fermante.
+ * Champ lexical pour les types de parenthèses fermantes.
  */
-public class ParentheseFermante extends Lexique {
+public class ParentheseFermanteLexique extends Lexique {
 
     /**
-     * Initialise une nouvelle instance de la classe {@link ParentheseFermante}.
+     * Initialise une nouvelle instance de la classe {@link ParentheseFermanteLexique}.
      */
-    public ParentheseFermante() {
+    public ParentheseFermanteLexique() {
         super();
     }
 
@@ -26,5 +28,12 @@ public class ParentheseFermante extends Lexique {
 
         etat1.ajtTransition(transition);
         this.source = etat1;
+    }
+
+    @Override
+    public Symbole extraireSymbole(String instruction, int curseur) {
+        String unite = this.extraireUniteLexicale(instruction, curseur);
+        if(unite == null) return null;
+        return new ParentheseFermanteSymbole(unite);
     }
 }

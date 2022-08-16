@@ -5,11 +5,13 @@ import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.e
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.Lexique;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomateNonSatisfaisant;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.transition.TransitionAutomate;
+import org.pantheon.gaia.compileur.outils.symbole.source.Symbole;
+import org.pantheon.gaia.compileur.outils.symbole.v1.IdentifiantSymbole;
 
 /**
- * Classe représentant le vocabulaire pour un identifiant.
+ * Champ lexical pour les types identifiants.
  */
-public class Identifiant extends Lexique {
+public class IdentifiantLexique extends Lexique {
 
     /**
      * Le second état source.
@@ -18,9 +20,9 @@ public class Identifiant extends Lexique {
 
 
     /**
-     * Initialise une nouvelle instance de la classe {@link Identifiant}.
+     * Initialise une nouvelle instance de la classe {@link IdentifiantLexique}.
      */
-    public Identifiant() {
+    public IdentifiantLexique() {
         super();
     }
 
@@ -47,19 +49,25 @@ public class Identifiant extends Lexique {
     }
 
     @Override
-    public String extraireUniteLexicale(String commande, int curseur) {
-        String extraction = super.extraireUniteLexicale(commande, curseur);
+    public Symbole extraireSymbole(String instruction, int curseur) {
+        String unite = this.extraireUniteLexicale(instruction, curseur);
+        if(unite == null) return null;
+        return new IdentifiantSymbole(unite);
+    }
+
+    @Override
+    protected String extraireUniteLexicale(String instruction, int curseur) {
+        String extraction = super.extraireUniteLexicale(instruction, curseur);
         if(extraction == null) return null;
 
         StringBuilder unite = new StringBuilder(extraction);
         curseur++;
-        String buffer = this.extraireSousUniteLexicale(commande, curseur);
-
+        String buffer = this.extraireSousUniteLexicale(instruction, curseur);
 
         while((buffer != null)) {
             unite.append(buffer);
             curseur++;
-            buffer = this.extraireSousUniteLexicale(commande, curseur);
+            buffer = this.extraireSousUniteLexicale(instruction, curseur);
         }
 
         return unite.toString();

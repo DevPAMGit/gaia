@@ -4,16 +4,18 @@ import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.L
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomateSatisfaisant;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomateNonSatisfaisant;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.transition.TransitionAutomate;
+import org.pantheon.gaia.compileur.outils.symbole.source.Symbole;
+import org.pantheon.gaia.compileur.outils.symbole.v1.FinSymbole;
 
 /**
- * Classe personnalisée pour l'extraction du caractère de fin d'instruction.
+ * Champ lexical pour les types fins de lexique.
  */
-public class Fin extends Lexique {
+public class FinLexique extends Lexique {
 
     /**
-     * Initialise une nouvelle instance de la classe {@link Fin}.
+     * Initialise une nouvelle instance de la classe {@link FinLexique}.
      */
-    public Fin(){ }
+    public FinLexique(){ }
 
     @Override
     protected void initialiser() {
@@ -24,5 +26,12 @@ public class Fin extends Lexique {
 
         etat1.ajtTransition(transition1);
         this.source = etat1;
+    }
+
+    @Override
+    public Symbole extraireSymbole(String instruction, int curseur) {
+        String unite = this.extraireUniteLexicale(instruction, curseur);
+        if(unite == null) return null;
+        return new FinSymbole(unite);
     }
 }

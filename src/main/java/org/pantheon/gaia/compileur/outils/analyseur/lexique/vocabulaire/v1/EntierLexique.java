@@ -4,16 +4,18 @@ import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.L
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomateSatisfaisant;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.transition.TransitionAutomate;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomateNonSatisfaisant;
+import org.pantheon.gaia.compileur.outils.symbole.source.Symbole;
+import org.pantheon.gaia.compileur.outils.symbole.v1.EntierSymbole;
 
 /**
- * Classe personnalisée pour l'extraction d'entiers.
+ * Champ lexical pour les types entiers.
  */
-public class Entier extends Lexique {
+public class EntierLexique extends Lexique {
 
     /**
-     * Initialise une nouvelle instance de la classe {@link Entier}.
+     * Initialise une nouvelle instance de la classe {@link EntierLexique}.
      */
-    public Entier(){
+    public EntierLexique(){
         super();
     }
 
@@ -30,17 +32,24 @@ public class Entier extends Lexique {
     }
 
     @Override
-    public String extraireUniteLexicale(String commande, int curseur) {
-        String unite = super.extraireUniteLexicale(commande, curseur);
+    public Symbole extraireSymbole(String instruction, int curseur) {
+        String unite = this.extraireUniteLexicale(instruction, curseur);
+        if(unite == null) return null;
+        return new EntierSymbole(unite);
+    }
+
+    @Override
+    protected String extraireUniteLexicale(String instruction, int curseur) {
+        String unite = super.extraireUniteLexicale(instruction, curseur);
         if(unite == null) return null;
 
         curseur++;
-        String buffer = super.extraireUniteLexicale(commande, curseur);
+        String buffer = super.extraireUniteLexicale(instruction, curseur);
 
         while((buffer != null)) {
             unite += buffer;
             curseur++;
-            buffer = super.extraireUniteLexicale(commande, curseur);
+            buffer = super.extraireUniteLexicale(instruction, curseur);
         }
 
         return unite;

@@ -4,16 +4,17 @@ import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.e
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.Lexique;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomateNonSatisfaisant;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.transition.TransitionAutomate;
+import org.pantheon.gaia.compileur.outils.symbole.source.Symbole;
 
 /**
- * Classe personnalisée pour l'extraction de chaînes de caractères.
+ * Champ lexical pour les types chaînes de caractères.
  */
-public class Chaine  extends Lexique {
+public class ChaineLexique extends Lexique {
 
     /**
-     * Initialise une nouvelle instance de la classe {@link Chaine}.
+     * Initialise une nouvelle instance de la classe {@link ChaineLexique}.
      */
-    public Chaine() {
+    public ChaineLexique() {
         super();
     }
 
@@ -31,14 +32,17 @@ public class Chaine  extends Lexique {
         etat2.ajtTransition(transition2);
         etat2.ajtTransition(transition4);
 
-        // \s+(?=([^"]*"[^"]*")*[^"]*$)
-
         this.source = etat1;
     }
 
     @Override
-    public String extraireUniteLexicale(String commande, int curseur) {
-        String resultat = super.extraireUniteLexicale(commande, curseur);
+    public Symbole extraireSymbole(String instruction, int curseur) {
+        return null;
+    }
+
+    @Override
+    public String extraireUniteLexicale(String instruction, int curseur) {
+        String resultat = super.extraireUniteLexicale(instruction, curseur);
         if(resultat == null) return null;
         return resultat.substring(1,resultat.length()-1);
     }

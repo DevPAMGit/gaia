@@ -4,11 +4,13 @@ import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.L
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomateNonSatisfaisant;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomateSatisfaisant;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.transition.TransitionAutomate;
+import org.pantheon.gaia.compileur.outils.symbole.source.Symbole;
+import org.pantheon.gaia.compileur.outils.symbole.v1.ParentheseOuvranteSymbole;
 
 /**
- * Classe personnalisée pour l'extraction du caractère de parenthèse ouvrante.
+ * Champ lexical pour les types de parenthèses ouvrantes.
  */
-public class ParentheseOuvrante extends Lexique {
+public class ParentheseOuvranteLexique extends Lexique {
     @Override
     protected void initialiser() {
         EtatAutomateNonSatisfaisant etat1 = new EtatAutomateNonSatisfaisant();
@@ -19,5 +21,12 @@ public class ParentheseOuvrante extends Lexique {
         etat1.ajtTransition(transition1);
 
         this.source = etat1;
+    }
+
+    @Override
+    public Symbole extraireSymbole(String instruction, int curseur) {
+        String unite = this.extraireUniteLexicale(instruction, curseur);
+        if(unite == null) return null;
+        return new ParentheseOuvranteSymbole(unite);
     }
 }
