@@ -6,7 +6,7 @@ import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.EtatAutomateSa
 import org.pantheon.gaia.compileur.outils.vocabulaire.source.transition.TransitionAutomate;
 
 /**
- * Automate pour le vocabulaire de chaîne de caractères.
+ * Classe personnalisée pour l'extraction de chaînes de caractères.
  */
 public class Chaine  extends Automate {
 

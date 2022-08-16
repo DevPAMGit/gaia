@@ -6,7 +6,7 @@ import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.EtatAutomateSa
 import org.pantheon.gaia.compileur.outils.vocabulaire.source.transition.TransitionAutomate;
 
 /**
- * Classe de vocabulaire pour la fin d'une instruction.
+ * Classe personnalisée pour l'extraction du caractère de fin d'instruction.
  */
 public class Fin extends Automate {
 

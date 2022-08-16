@@ -6,7 +6,7 @@ import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.EtatAutomateSa
 import org.pantheon.gaia.compileur.outils.vocabulaire.source.transition.TransitionAutomate;
 
 /**
- * Automate pour un vocabulaire d'entier.
+ * Classe personnalisée pour l'extraction d'entiers.
  */
 public class Entier extends Automate {
 

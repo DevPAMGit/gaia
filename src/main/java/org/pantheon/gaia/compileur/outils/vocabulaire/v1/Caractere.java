@@ -5,6 +5,9 @@ import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.EtatAutomateNo
 import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.EtatAutomateSatisfaisant;
 import org.pantheon.gaia.compileur.outils.vocabulaire.source.transition.TransitionAutomate;
 
+/**
+ * Classe personnalisée pour l'extraction de caractères.
+ */
 public class Caractere  extends Automate {
 
     /**

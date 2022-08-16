@@ -55,12 +55,7 @@ public class Reel extends Entier {
      * Sous extracteur d'unité lexicale.
      * @param commande la commande à parser.
      * @param curseur La position de départ pour du parseur.
-     */
-    /**
-     * Méthode permettant d'extraire une unité lexicale.
-     * @param commande La commande d'où l'on extrait l'unité.
-     * @param curseur La position de démarrage de l'unité
-     * @return L'unité lexicale extraite ou null.
+     * @return  La sous-unité lexicale extraite ou null.
      */
     public String extraireSousUniteLexicale(String commande, int curseur) {
         String unite = "";
@@ -75,7 +70,6 @@ public class Reel extends Entier {
         }
 
         if(etat == null || !etat.estSatisfaisant()) return null;
-        System.out.println("unite - fin : " + unite);
         return unite;
     }
 }
