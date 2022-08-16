@@ -26,11 +26,10 @@ Un compilateur (pour simplifier) permet de passer un langage intelligible humain
 |--|--|
 | **axiome** | instruction+ |
 | **instruction** | appel_service |
-| **appel_service** | identifiant ‘(‘ liste_argument ‘)’ fin | identifiant ‘(‘ ‘)’ fin** |
+| **appel_service** | identifiant ‘(‘ liste_argument ‘)’ fin | identifiant ‘(‘ ‘)’ ';'** |
 | **identifiant** | [a-zA-Z][a-zA-Z0-9]* |
-| **fin** | ‘;’ |
-| **liste_arguments** | argument ( ‘,’ argument)* |
-| **argument** | entier \| booléen \| réel \| chaîne \| caractère \| ‘null’ |
+| **liste_arguments** | expression ( ‘,’ expression)* |
+| **expression** | entier \| booléen \| réel \| chaîne \| caractère \| ‘null’ |
 | **entier** | [0-9]+ |
 | **booléen** | True \| true \| False \| false |
 | **chaîne** | [\”]([^\"]\|\\"\\"\)*[\\"] |
