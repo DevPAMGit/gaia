@@ -24,7 +24,8 @@ Donc, on se lance dans le développement d'un module d'interprétation sur le mo
 Un compilateur (pour simplifier) permet de passer un langage intelligible humain à un langage que comprend la machine. Pour ce faire, avant tout, il faut définir nos modalités de communications avec avec la machine avec une **grammaire*** (Une grammaire est la syntaxe que l'on utilisera pour communiquer avec l'application).
 |  |  |
 |--|--|
-| **axiome** | appel_service |
+| **axiome** | instruction+ |
+| **instruction** | appel_service |
 | **appel_service** | identifiant ‘(‘ liste_argument ‘)’ fin | identifiant ‘(‘ ‘)’ fin** |
 | **identifiant** | [a-zA-Z][a-zA-Z0-9]* |
 | **fin** | ‘;’ |
