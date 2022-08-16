@@ -1,7 +1,7 @@
-package org.pantheon.gaia.compilateur.outils.vocabulaire.transition;
+package org.pantheon.gaia.compilateur.outils.vocabulaire.source.transition;
 
+import org.junit.Assert;
 import org.junit.Test;
-import junit.framework.TestCase;
 import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.EtatAutomate;
 import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.IEtatAutomate;
 import org.pantheon.gaia.compileur.outils.vocabulaire.source.transition.TransitionAutomate;
@@ -9,11 +9,11 @@ import org.pantheon.gaia.compileur.outils.vocabulaire.source.transition.Transiti
 /**
  * Classe de test pour la classe TransitionAutomate.
  */
-public class TransitionAutomateTest extends TestCase {
+public class TransitionAutomateTest {
     /**
      * L'instance à tester dans cette classe.
      */
-    private TransitionAutomate transition;
+    private final TransitionAutomate transition;
 
     /**
      * Initialise une nouvelle instance de la classe {@link TransitionAutomateTest}.s
@@ -27,14 +27,14 @@ public class TransitionAutomateTest extends TestCase {
     @Test
     public void testTransitionOk() {
         IEtatAutomate destination = this.transition.transiter("a");
-        assertNotNull(destination);
-        assertTrue(destination.estSatisfaisant());
+        Assert.assertNotNull(destination);
+        Assert.assertTrue(destination.estSatisfaisant());
     }
 
     @Test
     public void testTransitionNonOk() {
         IEtatAutomate destination = this.transition.transiter("1");
-        assertNull(destination);
+        Assert.assertNull(destination);
     }
 
 }

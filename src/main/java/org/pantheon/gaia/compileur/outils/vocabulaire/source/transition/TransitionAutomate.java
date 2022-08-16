@@ -31,6 +31,9 @@ public class TransitionAutomate {
      * @return L'état suivant si la condition est rempli sinon null.
      */
     public IEtatAutomate transiter(String caractere) {
+        /*System.out.println(this.valeur +  " == " + caractere);
+        System.out.println(caractere.matches(this.valeur));*/
+
         if(caractere == null) return null;
         if( caractere.matches(this.valeur) ) return this.destination;
         return null;

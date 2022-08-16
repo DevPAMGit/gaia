@@ -1,6 +1,6 @@
-package org.pantheon.gaia.compilateur.outils.vocabulaire.etat;
+package org.pantheon.gaia.compilateur.outils.vocabulaire.source.etat;
 
-import junit.framework.TestCase;
+import org.junit.Assert;
 import org.junit.Test;
 import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.EtatAutomate;
 import org.pantheon.gaia.compileur.outils.vocabulaire.source.etat.EtatAutomateSatisfaisant;
@@ -9,17 +9,17 @@ import org.pantheon.gaia.compileur.outils.vocabulaire.source.transition.Transiti
 /**
  * Classe de test pour la classe EtatAutomateSatisfaisant.
  */
-public class EtatAutomateSatisfaisantTest extends TestCase {
+public class EtatAutomateSatisfaisantTest {
 
     /**
      * Etat de satisfaction à tester.
      */
-    private EtatAutomateSatisfaisant etatSatisfaisant;
+    private final EtatAutomateSatisfaisant etatSatisfaisant;
 
     /**
      * Etat de non-satisfaction à tester.
      */
-    private EtatAutomate etatNonSatisfaisant = new EtatAutomate(false);
+    private final EtatAutomate etatNonSatisfaisant = new EtatAutomate(false);
 
     /**
      * Initialise une nouvelle instance de la classe {@link EtatAutomateSatisfaisantTest}.
@@ -33,7 +33,7 @@ public class EtatAutomateSatisfaisantTest extends TestCase {
      */
     @Test
     public void testSatisfaction() {
-        assertTrue(this.etatSatisfaisant.estSatisfaisant());
+        Assert.assertTrue(this.etatSatisfaisant.estSatisfaisant());
     }
 
     /**
@@ -44,7 +44,7 @@ public class EtatAutomateSatisfaisantTest extends TestCase {
         // Cette commande n'est pas supposée ajouter la transition.
         this.etatSatisfaisant.ajtTransition(new TransitionAutomate(this.etatNonSatisfaisant, "[a-zA-Z]"));
         // En conséquence même si la transition devrait être ok, celle-ci doit être null.
-        assertNull(this.etatSatisfaisant.transiter("a"));
+        Assert.assertNull(this.etatSatisfaisant.transiter("a"));
     }
 
 }
