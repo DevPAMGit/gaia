@@ -1,4 +1,4 @@
-package org.pantheon.gaia.compilateur.outils.vocabulaire.source.transition;
+package org.pantheon.gaia.compilateur.outils.analyseur.lexique.vocabulaire.source.transition;
 
 import org.junit.Assert;
 import org.junit.Test;

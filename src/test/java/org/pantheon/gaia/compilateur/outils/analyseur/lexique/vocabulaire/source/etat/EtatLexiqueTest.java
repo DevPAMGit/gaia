@@ -1,4 +1,4 @@
-package org.pantheon.gaia.compilateur.outils.vocabulaire.source.etat;
+package org.pantheon.gaia.compilateur.outils.analyseur.lexique.vocabulaire.source.etat;
 
 import org.junit.Assert;
 import org.junit.Test;

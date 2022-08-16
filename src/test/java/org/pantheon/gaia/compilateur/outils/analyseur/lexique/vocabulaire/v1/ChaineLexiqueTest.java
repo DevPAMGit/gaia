@@ -1,4 +1,4 @@
-package org.pantheon.gaia.compilateur.outils.vocabulaire.v1;
+package org.pantheon.gaia.compilateur.outils.analyseur.lexique.vocabulaire.v1;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -28,8 +28,8 @@ public class ChaineLexiqueTest {
     public void extraireSymboleVideTest() {
         String chaineVide1 = "\"\"";
         String chaineVide2 = "\" \"";
-        Assert.assertEquals("", this.vocabulaire.extraireUniteLexicale(chaineVide1, 0));
-        Assert.assertEquals(" ", this.vocabulaire.extraireUniteLexicale(chaineVide2, 0));
+        Assert.assertEquals("", this.vocabulaire.extraireSymbole(chaineVide1, 0).obtJeton());
+        Assert.assertEquals(" ", this.vocabulaire.extraireSymbole(chaineVide2, 0).obtJeton());
     }
 
     /**
@@ -39,9 +39,10 @@ public class ChaineLexiqueTest {
     public void extraireSymboleValideTest() {
         String chaineVide1 = "\"Neque porro quisquam est qui\"";
         String chaineVide2 = "\"  dolorem ipsum quia dolor sit amet, consectetur \" ";
-        Assert.assertEquals("Neque porro quisquam est qui", this.vocabulaire.extraireUniteLexicale(chaineVide1, 0));
+        Assert.assertEquals("Neque porro quisquam est qui", this.vocabulaire.extraireSymbole(chaineVide1,
+                0).obtJeton());
         Assert.assertEquals("  dolorem ipsum quia dolor sit amet, consectetur ",
-                this.vocabulaire.extraireUniteLexicale(chaineVide2, 0));
+                this.vocabulaire.extraireSymbole(chaineVide2, 0).obtJeton());
     }
 
     /**
@@ -51,8 +52,8 @@ public class ChaineLexiqueTest {
     public void extraireSymboleErreurTest() {
         String chaineVide1 = "\"Neque porro quisquam est qui ";
         String chaineVide2 = "10";
-        Assert.assertNull(this.vocabulaire.extraireUniteLexicale(chaineVide1, 0));
-        Assert.assertNull(this.vocabulaire.extraireUniteLexicale(chaineVide2, 0));
+        Assert.assertNull(this.vocabulaire.extraireSymbole(chaineVide1, 0));
+        Assert.assertNull(this.vocabulaire.extraireSymbole(chaineVide2, 0));
     }
 
 }

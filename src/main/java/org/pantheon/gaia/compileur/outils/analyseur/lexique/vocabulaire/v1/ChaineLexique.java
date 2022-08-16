@@ -5,6 +5,7 @@ import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.L
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.etat.EtatAutomateNonSatisfaisant;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.transition.TransitionAutomate;
 import org.pantheon.gaia.compileur.outils.symbole.source.Symbole;
+import org.pantheon.gaia.compileur.outils.symbole.v1.ChaineSymbole;
 
 /**
  * Champ lexical pour les types chaînes de caractères.
@@ -37,11 +38,13 @@ public class ChaineLexique extends Lexique {
 
     @Override
     public Symbole extraireSymbole(String instruction, int curseur) {
-        return null;
+        String unite = this.extraireUniteLexicale(instruction, curseur);
+        if(unite == null) return null;
+        return new ChaineSymbole(unite);
     }
 
     @Override
-    public String extraireUniteLexicale(String instruction, int curseur) {
+    protected String extraireUniteLexicale(String instruction, int curseur) {
         String resultat = super.extraireUniteLexicale(instruction, curseur);
         if(resultat == null) return null;
         return resultat.substring(1,resultat.length()-1);
