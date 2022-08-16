@@ -2,6 +2,7 @@ package org.pantheon.gaia.compilateur.outils.analyseur.lexique;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.function.ThrowingRunnable;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.AnalyseLexicalException;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.AnalyseurLexical;
 import org.pantheon.gaia.compileur.outils.symbole.source.Symbole;
@@ -58,5 +59,14 @@ public class AnalyseurLexicaleTest {
             Assert.assertEquals(symboles.get(i).obtJeton(), this.RESULTATS.get(i).obtJeton());
             Assert.assertEquals(symboles.get(i).obtType(), this.RESULTATS.get(i).obtType());
         }
+    }
+
+    /**
+     * Test l'analyseur avec une instruction non valide.
+     */
+    @Test
+    public void analyseNonValide() throws AnalyseLexicalException {
+        String instruction = "service ( \"chaine\", c', 10, 10.5);";
+        Assert.assertThrows(AnalyseLexicalException.class, () -> { this.analyseur.analyser(instruction); });
     }
 }
