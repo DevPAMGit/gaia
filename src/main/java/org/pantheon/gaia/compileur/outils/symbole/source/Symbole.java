@@ -8,7 +8,7 @@ public abstract class Symbole {
     /**
      * Le type du symbole.
      */
-    private final ETypeSymbol type;
+    private final ETypeSymbole type;
 
     /**
      * Le jeton d'identification du symbole.
@@ -18,7 +18,7 @@ public abstract class Symbole {
     /** Initialise une nouvelle instance de la classe {@link Symbole}.
      * @param type Le type du {@link Symbole}.
      * @param jeton Le jeton reconnu du {@link Symbole}. */
-    public Symbole(ETypeSymbol type, String jeton) {
+    public Symbole(ETypeSymbole type, String jeton) {
         this.type = type;
         this.jeton = jeton;
     }
@@ -27,7 +27,7 @@ public abstract class Symbole {
      * Méthode permettant d'obtenir le type du symbole.
      * @return Le type du symbole.
      */
-    public ETypeSymbol obtType() {
+    public ETypeSymbole obtType() {
         return this.type;
     }
 

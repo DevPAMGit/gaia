@@ -27,7 +27,7 @@ public class EtatLexiqueTest {
         this.etatSatisfaisant = new EtatAutomate(true);
         this.etatNonSatisfaisant = new EtatAutomate(false);
 
-        this.etatSatisfaisant.ajtTransition(new TransitionAutomate(this.etatNonSatisfaisant, "[a-zA-Z]"));
+        this.etatSatisfaisant.ajouterTransition(new TransitionAutomate(this.etatNonSatisfaisant, "[a-zA-Z]"));
     }
 
     @Test

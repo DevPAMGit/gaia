@@ -1,6 +1,6 @@
 package org.pantheon.gaia.compileur.outils.symbole.v1;
 
-import org.pantheon.gaia.compileur.outils.symbole.source.ETypeSymbol;
+import org.pantheon.gaia.compileur.outils.symbole.source.ETypeSymbole;
 import org.pantheon.gaia.compileur.outils.symbole.source.Symbole;
 
 /**
@@ -13,6 +13,6 @@ public class ParentheseOuvranteSymbole extends Symbole {
      * @param jeton Le jeton reconnu du {@link Symbole}.
      */
     public ParentheseOuvranteSymbole(String jeton) {
-        super(ETypeSymbol.PARENTHESE_OUVRANTE, jeton);
+        super(ETypeSymbole.PARENTHESE_OUVRANTE, jeton);
     }
 }

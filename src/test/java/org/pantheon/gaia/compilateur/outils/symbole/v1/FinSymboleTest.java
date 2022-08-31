@@ -2,7 +2,7 @@ package org.pantheon.gaia.compilateur.outils.symbole.v1;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.pantheon.gaia.compileur.outils.symbole.source.ETypeSymbol;
+import org.pantheon.gaia.compileur.outils.symbole.source.ETypeSymbole;
 import org.pantheon.gaia.compileur.outils.symbole.v1.BooleenSymbole;
 import org.pantheon.gaia.compileur.outils.symbole.v1.FinSymbole;
 
@@ -28,7 +28,7 @@ public class FinSymboleTest {
      */
     @Test
     public void testType() {
-        Assert.assertSame(this.symbole.obtType(), ETypeSymbol.FIN);
+        Assert.assertSame(this.symbole.obtType(), ETypeSymbole.FIN);
     }
 
     /**

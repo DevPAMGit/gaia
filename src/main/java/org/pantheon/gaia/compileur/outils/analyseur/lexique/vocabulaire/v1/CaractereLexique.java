@@ -31,12 +31,12 @@ public class CaractereLexique extends Lexique {
         TransitionAutomate transition3 = new TransitionAutomate(etat4, "'");
         TransitionAutomate transition4 = new TransitionAutomate(etat4, "'");
 
-        etat1.ajtTransition(transition1);
-        etat2.ajtTransition(transition2);
-        etat3.ajtTransition(transition3);
-        etat3.ajtTransition(transition4);
+        etat1.ajouterTransition(transition1);
+        etat2.ajouterTransition(transition2);
+        etat3.ajouterTransition(transition3);
+        etat3.ajouterTransition(transition4);
 
-        etat2.ajtTransition(transition4);
+        etat2.ajouterTransition(transition4);
 
         this.source = etat1;
     }

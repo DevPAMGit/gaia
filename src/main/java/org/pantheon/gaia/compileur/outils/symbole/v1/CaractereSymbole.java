@@ -1,6 +1,6 @@
 package org.pantheon.gaia.compileur.outils.symbole.v1;
 
-import org.pantheon.gaia.compileur.outils.symbole.source.ETypeSymbol;
+import org.pantheon.gaia.compileur.outils.symbole.source.ETypeSymbole;
 import org.pantheon.gaia.compileur.outils.symbole.source.Symbole;
 
 /**
@@ -12,6 +12,6 @@ public class CaractereSymbole extends Symbole {
      * @param jeton Le jeton reconnu du {@link Symbole}.
      */
     public CaractereSymbole(String jeton) {
-        super(ETypeSymbol.CARACTERE, jeton);
+        super(ETypeSymbole.CARACTERE, jeton);
     }
 }

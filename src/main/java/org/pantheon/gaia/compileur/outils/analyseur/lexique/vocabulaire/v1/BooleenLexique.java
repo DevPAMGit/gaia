@@ -41,16 +41,16 @@ public class BooleenLexique extends Lexique {
         TransitionAutomate transition7 = new TransitionAutomate(etat8, "l");
         TransitionAutomate transition8 = new TransitionAutomate(etat4, "s");
 
-        etat1.ajtTransition(transition1);
-        etat1.ajtTransition(transition5);
+        etat1.ajouterTransition(transition1);
+        etat1.ajouterTransition(transition5);
 
-        etat2.ajtTransition(transition2);
-        etat3.ajtTransition(transition3);
-        etat4.ajtTransition(transition4);
+        etat2.ajouterTransition(transition2);
+        etat3.ajouterTransition(transition3);
+        etat4.ajouterTransition(transition4);
 
-        etat6.ajtTransition(transition6);
-        etat7.ajtTransition(transition7);
-        etat8.ajtTransition(transition8);
+        etat6.ajouterTransition(transition6);
+        etat7.ajouterTransition(transition7);
+        etat8.ajouterTransition(transition8);
 
         this.source = etat1;
     }

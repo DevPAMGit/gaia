@@ -1,9 +1,11 @@
 package org.pantheon.gaia.compileur.outils.analyseur.lexique;
 
+import org.pantheon.gaia.compileur.outils.exception.CompilateurException;
+
 /**
  * Classe d'exception lancée lorsque
  */
-public class AnalyseLexicalException extends Exception {
+public class AnalyseLexicalException extends CompilateurException {
 
     /**
      * L'instruction ayant causé l'erreur.
@@ -21,17 +23,14 @@ public class AnalyseLexicalException extends Exception {
      * @param curseur Curseur sur le début de l'erreur.
      */
     public AnalyseLexicalException(String instruction, int curseur) {
-        super();
+        super(null);
         this.instruction = instruction;
         this.curseur = curseur;
     }
 
     @Override
     public String getMessage() {
-        StringBuilder message = new StringBuilder(String.format("\n%s\n", this.instruction));
-        for(int i=0; i<this.curseur; i++)
-            message.append(" ");
-        message.append("^\nL'unité lexicale n'a pas été reconnue.");
-        return message.toString();
+        return String.format("\n%s\n", this.instruction) + " ".repeat(Math.max(0, this.curseur)) +
+                "^\nVotre commandes est lexicalement incorrect à cet endroit.";
     }
 }

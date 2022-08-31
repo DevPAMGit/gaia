@@ -31,7 +31,7 @@ public class EtatAutomate implements IEtatAutomate {
      * Ajoute une transition à l'état.
      * @param transition La transition à ajouter.
      */
-    public void ajtTransition(TransitionAutomate transition) {
+    public void ajouterTransition(TransitionAutomate transition) {
         this.transitions.add(transition);
     }
 

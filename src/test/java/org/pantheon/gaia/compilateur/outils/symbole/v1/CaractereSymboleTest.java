@@ -2,7 +2,7 @@ package org.pantheon.gaia.compilateur.outils.symbole.v1;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.pantheon.gaia.compileur.outils.symbole.source.ETypeSymbol;
+import org.pantheon.gaia.compileur.outils.symbole.source.ETypeSymbole;
 import org.pantheon.gaia.compileur.outils.symbole.v1.BooleenSymbole;
 import org.pantheon.gaia.compileur.outils.symbole.v1.CaractereSymbole;
 
@@ -28,7 +28,7 @@ public class CaractereSymboleTest {
      */
     @Test
     public void testType() {
-        Assert.assertTrue( this.symbole.obtType() == ETypeSymbol.CARACTERE );
+        Assert.assertTrue( this.symbole.obtType() == ETypeSymbole.CARACTERE );
     }
 
     /**

@@ -29,9 +29,9 @@ public class ChaineLexique extends Lexique {
         TransitionAutomate transition2 = new TransitionAutomate(etat2, "[^\"]");
         TransitionAutomate transition4 = new TransitionAutomate(etat3, "^\"$");
 
-        etat1.ajtTransition(transition1);
-        etat2.ajtTransition(transition2);
-        etat2.ajtTransition(transition4);
+        etat1.ajouterTransition(transition1);
+        etat2.ajouterTransition(transition2);
+        etat2.ajouterTransition(transition4);
 
         this.source = etat1;
     }

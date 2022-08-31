@@ -23,7 +23,7 @@ public class VirguleLexique extends Lexique {
         EtatAutomateNonSatisfaisant etat1 = new EtatAutomateNonSatisfaisant();
         EtatAutomateSatisfaisant etat2 = new EtatAutomateSatisfaisant();
 
-        etat1.ajtTransition(new TransitionAutomate(etat2, ","));
+        etat1.ajouterTransition(new TransitionAutomate(etat2, ","));
 
         this.source = etat1;
     }

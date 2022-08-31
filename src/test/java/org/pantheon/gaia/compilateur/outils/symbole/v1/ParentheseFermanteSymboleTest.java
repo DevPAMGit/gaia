@@ -2,10 +2,9 @@ package org.pantheon.gaia.compilateur.outils.symbole.v1;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.pantheon.gaia.compileur.outils.symbole.source.ETypeSymbol;
+import org.pantheon.gaia.compileur.outils.symbole.source.ETypeSymbole;
 import org.pantheon.gaia.compileur.outils.symbole.v1.BooleenSymbole;
 import org.pantheon.gaia.compileur.outils.symbole.v1.ParentheseFermanteSymbole;
-import org.pantheon.gaia.compileur.outils.symbole.v1.ReelSymbole;
 
 /**
  * Classe de test pour un {@link BooleenSymbole}
@@ -29,7 +28,7 @@ public class ParentheseFermanteSymboleTest {
      */
     @Test
     public void testType() {
-        Assert.assertSame(this.symbole.obtType(), ETypeSymbol.PARENTHESE_FERMANTE);
+        Assert.assertSame(this.symbole.obtType(), ETypeSymbole.PARENTHESE_FERMANTE);
     }
 
     /**

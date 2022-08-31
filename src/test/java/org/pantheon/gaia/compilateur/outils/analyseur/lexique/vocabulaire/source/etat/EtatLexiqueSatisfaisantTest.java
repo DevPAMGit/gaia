@@ -42,7 +42,7 @@ public class EtatLexiqueSatisfaisantTest {
     @Test
     public void testTransition() {
         // Cette commande n'est pas supposée ajouter la transition.
-        this.etatSatisfaisant.ajtTransition(new TransitionAutomate(this.etatNonSatisfaisant, "[a-zA-Z]"));
+        this.etatSatisfaisant.ajouterTransition(new TransitionAutomate(this.etatNonSatisfaisant, "[a-zA-Z]"));
         // En conséquence même si la transition devrait être ok, celle-ci doit être null.
         Assert.assertNull(this.etatSatisfaisant.transiter("a"));
     }

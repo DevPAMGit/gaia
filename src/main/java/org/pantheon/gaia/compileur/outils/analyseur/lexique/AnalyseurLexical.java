@@ -2,7 +2,7 @@ package org.pantheon.gaia.compileur.outils.analyseur.lexique;
 
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.source.Lexique;
 import org.pantheon.gaia.compileur.outils.analyseur.lexique.vocabulaire.v1.*;
-import org.pantheon.gaia.compileur.outils.symbole.source.ETypeSymbol;
+import org.pantheon.gaia.compileur.outils.symbole.source.ETypeSymbole;
 import org.pantheon.gaia.compileur.outils.symbole.source.Symbole;
 
 import java.util.ArrayList;
@@ -46,7 +46,7 @@ public class AnalyseurLexical {
             symbole = this.obtSymbole(instruction, curseur);
             curseur += symbole.obtJeton().length();
 
-            if(symbole.obtType() == ETypeSymbol.CARACTERE || symbole.obtType() == ETypeSymbol.CHAINE)
+            if(symbole.obtType() == ETypeSymbole.CARACTERE || symbole.obtType() == ETypeSymbole.CHAINE)
                 curseur +=2;
 
             symboles.add(symbole);

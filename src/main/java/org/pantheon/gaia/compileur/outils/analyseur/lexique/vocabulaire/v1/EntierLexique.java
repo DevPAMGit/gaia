@@ -26,7 +26,7 @@ public class EntierLexique extends Lexique {
 
         TransitionAutomate transition1 = new TransitionAutomate(etat2, "\\d");
 
-        etat1.ajtTransition(transition1);
+        etat1.ajouterTransition(transition1);
 
         this.source = etat1;
     }

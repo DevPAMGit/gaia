@@ -34,15 +34,15 @@ public class IdentifiantLexique extends Lexique {
         TransitionAutomate transition1 = new TransitionAutomate(etat2, "[a-zA-Z]");
         TransitionAutomate transition2 = new TransitionAutomate(etat2, "[a-zA-Z0-9]");
 
-        etat1.ajtTransition(transition1);
-        etat2.ajtTransition(transition2);
+        etat1.ajouterTransition(transition1);
+        etat2.ajouterTransition(transition2);
 
         EtatAutomateNonSatisfaisant etat3 = new EtatAutomateNonSatisfaisant();
         EtatAutomateSatisfaisant etat4 = new EtatAutomateSatisfaisant();
 
         TransitionAutomate transition3 = new TransitionAutomate(etat4, "[a-zA-Z0-9]");
 
-        etat3.ajtTransition(transition3);
+        etat3.ajouterTransition(transition3);
 
         this.source = etat1;
         this.source2 = etat3;

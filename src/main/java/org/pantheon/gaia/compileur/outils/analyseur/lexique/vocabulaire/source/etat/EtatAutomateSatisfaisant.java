@@ -14,7 +14,7 @@ public class EtatAutomateSatisfaisant extends EtatAutomate {
     }
 
     @Override
-    public void ajtTransition(TransitionAutomate transition) {
+    public void ajouterTransition(TransitionAutomate transition) {
         // étant un état satisfaisant (donc final), cet état ne peut avoir de transitions suivantes.
         return;
     }

@@ -26,7 +26,7 @@ public class ParentheseFermanteLexique extends Lexique {
 
         TransitionAutomate transition = new TransitionAutomate(etat2, "\\)");
 
-        etat1.ajtTransition(transition);
+        etat1.ajouterTransition(transition);
         this.source = etat1;
     }
 
