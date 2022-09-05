@@ -29,20 +29,18 @@ Rappelez-vous, nous souhaitons passer ce type de commande :
 
 Celle-ci va se traduire sous la grammaire suivante (axiome étant le point de départ de toutes les commandes passés à l'API).
 
-$\text{\textcircled 1}$ axiome $\to$ instruction
-$\text{\textcircled 2}$ instruction $\to$ appel_service ';'
-$\text{\textcircled 3}$ appel_service $\to$ service '(' liste_argument ')'
-$\text{\textcircled 4}$ service $\to$ identifiant
-$\text{\textcircled 5}$ liste_argument$\to$ vide
-$\text{\textcircled 6}$ liste_argument$\to$ expression sousListeArgument
-$\text{\textcircled 7}$ sous_liste_argument$\to$ vide
-$\text{\textcircled 8}$ sous_liste_argument$\to$ ',' expression sous_liste_argument
-$\text{\textcircled 9}$ expression $\to$ entier|chaîne|réel|booléen|caractère
-$\text{\textcircled {10}}$ identifiant \to [a-zA-Z][a-zA-Z0-9]*
-$\text{\textcircled {11}}$ entier$\to$ [0-9]+
-$\text{\textcircled {12}}$ booléen $\to$ True | true | False | false
-$\text{\textcircled {13}}$ chaîne $\to$  [\”]([^\"]\|\\"\\"\)*[\\"]
-$\text{\textcircled {14}}$ caractère $\to$  [\'][a-zA-Z]*[\']
+|  |  |
+|--|--|
+| **axiome** | instruction+ |
+| **instruction** | appel_service |
+| **appel_service** | identifiant ‘(‘ liste_argument ‘)’ ';' \| identifiant ‘(‘ ‘)’ ';'** |
+| **identifiant** | [a-zA-Z][a-zA-Z0-9]* |
+| **liste_arguments** | expression ( ‘,’ expression)* |
+| **expression** | entier \| booléen \| réel \| chaîne \| caractère| 
+| **entier** | [0-9]+ |
+| **booléen** | True \| true \| False \| false |
+| **chaîne** | [\”]([^\"]\|\\"\\"\)*[\\"] |
+| **caractère** | [\'][a-zA-Z]*[\'] |
 
 ## Lexique
 Pour qu'un langage soit valide, il faut tout d'abord que ses composants (mot qui forme la commande ou encore champs lexical) soient valide. La grammaire nous aide à déterminer **éléments terminaux** (ceux dont la valeur n'est pas dérivée et qui ont pour dérivation une expression régulière ou caractère intégré) qui vont **définir les champs lexicaux de la grammaire**.
@@ -55,3 +53,5 @@ Cela va nous permettre de créer **un analyseur lexical** dont l'objectif est :
 * Dans le cas contraire elle rentre dans le lexique de la grammaire et est donc valide.
 
 **A la fin de ce traitement nous obtenons une liste d'unités lexicales**.
+
+
