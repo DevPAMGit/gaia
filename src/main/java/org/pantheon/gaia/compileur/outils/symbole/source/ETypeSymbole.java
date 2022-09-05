@@ -75,6 +75,12 @@ public enum ETypeSymbole {
     SOUS_LISTE_ARGUMENTS,
 
     /**
+     * Symbole terminal de la grammaire "vide".
+     */
+    VIDE,
+
+    SERVICE,
+    /**
      * Symbole non terminal de la grammaire "expression".
      */
     EXPRESSION
