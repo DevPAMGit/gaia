@@ -1,6 +1,5 @@
 package org.pantheon.gaia.compilateur.outils.analyseur.syntaxe.grammaire.v1.nonterminal;
 
-import com.sun.source.tree.AssertTree;
 import org.junit.Assert;
 import org.junit.Test;
 import org.pantheon.gaia.compileur.outils.analyseur.syntaxe.grammaire.v1.nonterminal.SousListeArgumentGrammaire;

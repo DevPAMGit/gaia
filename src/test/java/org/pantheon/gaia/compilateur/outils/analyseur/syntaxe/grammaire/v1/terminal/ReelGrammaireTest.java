@@ -6,7 +6,6 @@ import org.pantheon.gaia.compileur.outils.analyseur.syntaxe.grammaire.v1.termina
 import org.pantheon.gaia.compileur.outils.analyseur.syntaxe.unite.TexteSource;
 import org.pantheon.gaia.compileur.outils.symbole.source.Symbole;
 import org.pantheon.gaia.compileur.outils.symbole.v1.BooleenSymbole;
-import org.pantheon.gaia.compileur.outils.symbole.v1.EntierSymbole;
 import org.pantheon.gaia.compileur.outils.symbole.v1.ReelSymbole;
 
 import java.util.ArrayList;
